@@ -11,7 +11,7 @@ const fetch = require("node-fetch");
 const app = express();
 app.use(bodyParser.json());
 
-const mongoUri = process.env.MONGO_URI || 'mongodb+srv://Sachin1966:Sachin1966@smartfit.bocyckn.mongodb.net/smartfit_db?retryWrites=true&w=majority';
+const mongoUri = process.env.MONGO_URI || 'mongodb+srv://Sachin1966:Sachin1966@smartfit.bocyckn.mongodb.net/?appName=SMARTFIT';
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
