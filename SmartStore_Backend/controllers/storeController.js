@@ -7,10 +7,13 @@ exports.list = async (req, res) => {
 
 exports.create = async (req, res) => {
     try {
+        console.log('Received store creation request:', req.body);
         const newStore = new Store(req.body);
         await newStore.save();
+        console.log('Store saved successfully:', newStore);
         res.status(201).json(newStore);
     } catch (err) {
+        console.error('Error saving store:', err.message);
         res.status(400).json({ error: err.message });
     }
 };
